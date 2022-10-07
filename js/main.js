@@ -1,15 +1,12 @@
-/* eslint-disable no-alert */
-/* eslint-disable eol-last */
-/* eslint-disable indent */
-/* eslint-disable no-console */
-function randInt(min, max) {
-    return Math.round(min - 0.5 + Math.random() * (max - min + 1));
+function getRandomPositiveInteger(a, b) {
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
 }
+getRandomPositiveInteger(1, 5);
 
-randInt(0, 1);
-
-function checkLength(string, maxLenght) {
-    return string.length <= maxLenght;
+function checkStringLength(string, length) {
+  return string.length <= length;
 }
-
-checkLength('1', 1);
+checkStringLength('Hello', 5);
